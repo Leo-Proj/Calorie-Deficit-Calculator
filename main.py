@@ -1,16 +1,23 @@
 from meals import Meals
+from workouts import Workouts
 
 
 def start_menu():
     cal = 0
     meals = Meals()
+    workouts = Workouts()
     print(f"Welcome! Your total calorie intake for the day is {cal}.")
     print("What would you like to input?")
     print("1. Breakfast\n2. Lunch \n3. Dinner\n4. Snack\n5. Exit")
     selection = input("Please select the corresponding number: ")
     if selection == "1":
         print("Breakfast selected.")
-        meals.Breakfast()
+        cal = meals.Breakfast(cal)
+        print("What workouts have you done?")
+        print("1. Running")
+        choice = input("Please select a workout: ")
+        if choice == "1":
+            cal = workouts.running(cal)
     elif selection == "2":
         print("Lunch selected.")
     elif selection == "3":
